@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 
+import ListsContainer from './ListsContainer';
+
 class App extends Component {
   render() {
     return (
@@ -8,6 +10,7 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">Welcome List App</h1>
         </header>
+        <ListsContainer />
       </div>
     );
   }
