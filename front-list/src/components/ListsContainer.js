@@ -11,16 +11,24 @@ class ListsContainer extends Component {
     axios.get('http://localhost:3001/api/v1/lists.json')
     .then(response => {
       console.log(response)
-      // this.serState({
-      //   lists: response.data
-      // })
+      this.setState({
+        lists: response.data
+      })
     })
     .catch(error => console.log(error))
   }
 
   render() {
     return (
-      <div className="Lists-container">
+      <div className="Lists">
+        {this.state.lists.map((list) => {
+          return (
+            <div className="list" key={list.id}>
+              <h4>{list.title}</h4>
+              <p>{list.excerpt}</p>
+            </div>
+          )
+        })}
         Lists
       </div>
     );
